@@ -1,0 +1,11 @@
+services:
+  bao-admin:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_PATH: /data/bao_admin.sqlite3
+    volumes:
+      - bao-data:/data
+volumes:
+  bao-data:
